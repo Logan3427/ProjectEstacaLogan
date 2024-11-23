@@ -4,3 +4,4 @@ coverage
 sphinx
 sphinx_rtd_theme
 setuptools
+coverage-lcov
