@@ -1,0 +1,8 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[project]
+name = "mon_projet"
+version = "0.1.0"
+description = "Exemple de projet Python Logan"
+authors = [{name = "Logan F", email = "logan.four@estaca.eu"}]

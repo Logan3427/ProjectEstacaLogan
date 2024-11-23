@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\Logan\Desktop\Projet_Github\ProjectEstacaLogan\.env
+set VIRTUAL_ENV=C:\Users\Logan\OneDrive\Documents\GitHub\ProjectEstacaLogan\.env
 
 if not defined PROMPT set PROMPT=$P$G
 

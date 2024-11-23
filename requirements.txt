@@ -1,0 +1,6 @@
+black
+pytest
+coverage
+sphinx
+sphinx_rtd_theme
+setuptools
