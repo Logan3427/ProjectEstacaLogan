@@ -1,21 +1,36 @@
-name: CI
+name: Continuous Integration
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Python
-        uses: actions/setup-python@v4
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
-          python-version: 3.x
+          python-version: 3.8
+
       - name: Install dependencies
-        run: python scripts/ci.py
-      - name: Run Coverage
-        run: python scripts/coverage.py
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run tests with coverage
+        run: |
+          coverage run -m pytest
+          coverage report
+          coverage xml
+
+      - name: Upload coverage to Coveralls
+        uses: coverallsapp/github-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
